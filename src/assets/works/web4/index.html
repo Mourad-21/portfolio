@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SannySide</title>
+    <link rel="stylesheet" href="style.css">
+       <script>
+           var cp = 0
+           function humb(){
+                if(cp==0)
+            {
+              document.getElementById("all").style["left"]="10%"
+              document.getElementById("all").setAttribute("class","rot")
+                    cp++
+            }
+                  else
+           {      
+           document.getElementById("all").style["left"]="-80%"
+           document.getElementById("all").setAttribute("class","")
+                    cp=0
+            }  
+  }
+       </script>
+ 
+</head>
+<body>  
+    <header>  
+       <img id="row" src="./images/icon-arrow-down.svg">
+        <nav>
+            <h3>SannySide</h3>
+            <ul id="all">
+                <li>About</li>
+                <li>Services</li>
+                <li>Projects</li>
+                <li>Contact</li>
+            </ul> 
+            <img onclick="humb()" id="hum" src="./images/icon-hamburger.svg">
+        </nav>
+        <div class="container">
+        <h1>WE ARE CREATIVES</h1>
+         </div>
+    </header>
+    <section>
+        <div class="box">
+             <h1>Transform Your <br> Band</h1>
+             <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.  Odio voluptatibus <br> nostrum nulla placeat quod expedita!</p>
+             <a href="#">LEARN MORE</a>
+        </div>
+        <div class="box">
+            <img src="./images/desktop/image-transform.jpg">
+        </div>
+        <div class="box">
+            <img src="./images/desktop/image-stand-out.jpg">    
+        </div>
+        <div class="box">
+            <h1>    Stand out to the right <br> audience </h1>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.  Odio voluptatibus <br> nostrum nulla placeat quod expedita!</p>  
+                      <a href="#">LEARN MORE</a>
+        </div>
+        <div class="box"><img src="./images/desktop/image-graphic-design.jpg">
+            <span id="spn1"><h3>Graphic disagne</h3> <label>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.c Nesiunt, eius?</label></span>
+        </div>
+        <div class="box"><img src="./images/desktop/image-photography.jpg">
+            <span id="spn2"><h3>Photography</h3> <label>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit.c Nesiunt, eius?</label></span></div>
+    </section>
+    <div class="poeple">
+        <h1>CLIENTS TEST MONIALS</h1>
+        <div class="commentaire">
+        <div class="comment">
+            <img src="./images/image-emily.jpg">
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Porro, deleniti.</p>
+            <h3>emily</h3>
+            <h4>lorem lorem</h4>
+        </div>
+        <div class="comment">
+            <img src="./images/image-thomas.jpg">
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Porro, deleniti.</p>
+            <h3>thomas</h3>
+            <h4>lorem lorem</h4>
+        </div>
+        <div class="comment">
+            <img src="./images/image-jennie.jpg">
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Porro, deleniti.</p>
+            <h3>jennie</h3>
+            <h4>lorem lorem</h4>
+        </div>
+    </div>
+    </div>
+    <main>
+        <div class="box2">
+            <img src="./images/desktop/image-gallery-milkbottles.jpg">
+        </div>
+        <div class="box2">
+            <img src="./images/desktop/image-gallery-orange.jpg">
+        </div>
+        <div class="box2">
+            <img src="./images/desktop/image-gallery-cone.jpg">
+        </div>
+        <div class="box2">
+            <img src="./images/desktop/image-gallery-sugarcubes.jpg">
+        </div>
+    </main>
+    <footer>
+        <h3>SannySide</h3>
+        <ul id="all">
+            <li>About</li>
+            <li>Services</li>
+            <li>Projects</li>
+        </ul>
+        <ul id="social">
+            <li><img src="./images/icon-facebook.svg"></li>
+            <li><img src="./images/icon-instagram.svg"></li>
+            <li><img src="./images/icon-twitter.svg"></li>
+            <li><img src="./images/icon-pinterest.svg"></li>
+        </ul>  
+    </footer>
+</body>
+</html>

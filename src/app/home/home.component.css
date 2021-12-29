@@ -1,0 +1,453 @@
+
+/*----------------hamburger------------------*/
+.hamburger{
+position: absolute;
+right:15px;
+top: 30px;
+width:40px;
+height:40px;
+cursor: pointer;
+display: none;
+position: fixed;
+}
+#chek{
+  visibility: hidden;
+}
+.hamburger .bar{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+.hamburger .bar .middle{
+  overflow:hidden;
+    height: 5px;
+    width: 30px;
+    background: aqua;
+    border-radius: 50px;
+    position: absolute;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+.hamburger .bar .top{
+    bottom: 8px;
+    height:5px;
+    width: 40px;
+    background: aqua;
+    border-radius: 50px;
+    position: absolute;
+    transition: 0.3s ease;
+    pointer-events: none;
+        overflow:hidden;
+}
+.hamburger .bar .bottom{
+    top:13px;
+    height: 5px;
+    width: 40px;
+    background: aqua;
+    border-radius: 50px;
+    position: absolute;
+    transition: 0.3s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+.hamburger input[type="checkbox"]:checked ~  .bar .top {
+    transform: rotate(-45deg);
+    width: 40px;
+    transform-origin: right;
+    top: -10px;
+}
+.hamburger input[type="checkbox"]:checked ~.bar .bottom{
+    transform: rotate(45deg);
+    width: 40px;
+    transform-origin: right;
+    top: 19px;
+} 
+.hamburger input[type="checkbox"]:checked ~.bar .middle {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+/*----------------Nav bar------------------*/
+.content1{
+  width: 90%;
+  margin: auto;
+  height: 450px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.fixednav {
+  background-color: rgba(8, 7, 7, 0.9);
+  position: absolute;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index:1000;
+}
+.navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+font-weight: bold; 
+
+}
+.navbar ul li{
+    margin:  40px 25px;
+}
+.navbar ul a{
+text-decoration: none;
+font-size: 20px;
+color: rgb(248, 24, 99);
+}
+.navbar ul a:hover{
+  color: aqua;
+  transition: 0.4s ease-in-out;
+   }
+@media only screen and (max-width:630px){
+  .content1{
+    margin: 0;
+  }
+  .navbar ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    background: rgba(0, 0,0,0.7);
+    width: 100%;
+    z-index: 1001;
+    align-items: center;
+    transform: translateX(-630px);
+    transition:0.8s ease;
+    position: fixed;
+  }
+  .hamburger{
+    z-index: 1001;
+display: block;
+    }
+    .content1{
+    display: flex;
+    justify-content:center ;
+    align-items:flex-end ;
+    width: 100%;
+    }
+}
+/**************************photos.*************************************/
+
+/*-----------Home---------------------*/
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    margin-top: 150px;
+}
+.home .box:nth-child(1){
+    text-align: center;
+  }
+ 
+.home .box:nth-child(1) label{
+    color: goldenrod;
+    font-size:50px;
+    font-family: 'Tourney', cursive;
+}
+.home .box:nth-child(1) p
+{
+   color: aqua;
+}
+.home .box:nth-child(2){
+  text-align: center;
+}
+.home .box:nth-child(2) h2{
+    text-align: center;
+}
+.home .img{
+    width: 200px;
+    height: 175px;
+    margin-top: 50px;
+    border-radius: 5em;
+    background: url(../../assets/Images/profile1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: animate 20s infinite;
+  }
+  @keyframes animate{
+
+      100%{
+      background: url(../../assets/Images/profile2.jpg); 
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+  }
+/*anim*/
+.wrapper{
+    display: flex;
+  }
+  .wrapper .static-txt{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+  }
+  .wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+    position: relative;
+    z-index: 115;
+  }
+  .dynamic-txts li{
+    list-style: none;
+    color: rgb(248, 24, 99);
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100%{
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    height: 105%;
+    width: 100%;
+   background:black;
+    border-left: 2px solid rgb(248, 24, 99);
+    animation: typing 3s steps(10) infinite;
+  }
+  @keyframes typing {
+    40%, 60%{
+      left: calc(100% + 30px);
+    }
+    100%{
+      left: 0;
+    }
+  }
+/*-----------info---------------------*/
+.info {
+    background:  rgb(248, 24, 99);
+    color: white;
+    padding: 18px 0;
+    text-align: center;
+    margin: 50px 0;
+}
+@media only screen and (max-width:947px){
+  .info {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width:670px){
+  .info {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width:563px){
+  .wrapper .static-txt{
+    font-size:50px;
+    position: relative;
+    top: 13px;
+  }
+  .dynamic-txts li{
+    font-size:60px;
+  }
+  .dynamic-txts li span::after{
+    height: 105%;
+  }
+}
+@media only screen and (max-width:500px){
+  .wrapper .static-txt{
+    font-size:45px;
+    position: relative;
+    top: 13px;
+  }
+  .dynamic-txts li{
+    font-size:55px;
+  }
+  .dynamic-txts li span::after{
+    height: 115%;
+  }
+}
+@media only screen and (max-width:480px){
+  .wrapper .static-txt{
+    font-size:40px;
+    position: relative;
+    top: 20px;
+  }
+  .dynamic-txts li{
+    font-size:50px;
+  }
+  .dynamic-txts li span::after{
+    height: 120%;
+  }
+}
+@media only screen and (max-width:383px){
+  .box_button{
+      transform: translateY(50px);
+width: 120px;
+  }
+      .box_button a{
+          width: 85px;
+          font-size: 10px;
+          height: 45px;
+      }
+      .about{
+          padding: 0px 20px;
+      }
+      .about .box:nth-child(1){
+        width: 70%;
+        transform: translate(45px);
+      }
+}
+@media only screen and (max-width:385px){
+  .wrapper .static-txt{
+    font-size:30px;
+    position: relative;
+    top: 25px;
+  }
+  .dynamic-txts li{
+    font-size:40px;
+  }
+  .dynamic-txts li span::after{
+    height: 130%;
+  }
+}
+@media only screen and (max-width:339px){
+  .wrapper .static-txt{
+    font-size:30px;
+    position: relative;
+    top: 25px;
+  }
+  .dynamic-txts li{
+    font-size:36px;
+  }
+  .dynamic-txts li span::after{
+    height:70px;
+  }
+  .info {
+    font-size: 10px;
+  }
+}
+/*scroll component*/
+#ab{
+ display: flex;
+ justify-content: center;
+align-items: flex-start;
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  margin-bottom:400px;
+  overflow: hidden;
+}
+#wo{
+  display: flex;
+  justify-content: center;
+align-items: flex-end;
+   position: absolute;
+   width: 100%;
+   height: 500px;
+   pointer-events: none;
+   overflow: hidden;
+}
+#sk{
+  display: flex;
+  justify-content: center;
+align-items: flex-end;
+   position: absolute;
+   width: 100%;
+   height: 1150px;
+   pointer-events: none;
+   overflow: hidden;
+}
+#co{
+  display: flex;
+  justify-content: center;
+align-items: flex-end;
+   position: absolute;
+   width: 100%;
+   height: 2500px;
+   pointer-events: none;
+   overflow: hidden;
+}
+@media only screen and (max-width:799px){
+  #wo{
+
+     height: 630px;
+  }
+  #sk{
+     height: 1330px;
+  }
+  #co{
+     height: 3000px;
+  }
+}
+@media only screen and (max-width:707px){
+  #wo{
+     height: 630px;
+  }
+  #sk{
+     height: 1400px;
+  }
+  #co{
+     height: 3650px;
+  }
+}
+@media only screen and (max-width:563px){
+  #wo{
+     height: 400px;
+  }
+  #sk{
+     height: 1150px;
+  }
+  #co{
+     height: 3350px;
+  }
+}
+@media only screen and (max-width:444px){
+  #sk{
+     height: 1700px;
+  }
+  #co{
+     height: 3950px;
+  }
+}
+@media only screen and (max-width:419px){
+  #co{
+     height: 4250px;
+  }
+}
+@media only screen and (max-width:329px){
+  #co{
+     height: 4350px;
+  }
+}
+#play{
+  background-color: aqua;
+  padding: 10px;
+  margin-top:10px;
+  display: none;
+  border:none;
+  border-top-left-radius: 15px;
+  cursor: pointer;
+}
+#yn{
+    color: aqua;
+    font-weight: bold;
+
+}
+#yes,#no{
+  cursor: pointer;
+}

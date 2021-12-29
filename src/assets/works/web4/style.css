@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+header{
+    background: url(./images/desktop/image-header.jpg);
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    color: white;
+}
+#row{
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    height: 10vh;
+}
+nav{
+    width: 90%;
+    margin: auto;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+nav h3{
+  font-size: 22px;
+    flex: 1;
+}
+nav ul{
+ display: flex;
+ list-style: none;
+ transition:0.6s ease-in-out;
+}
+nav ul li{
+    margin: 0 20px;
+    font-size: 22px;
+}
+header .container{
+        height: 20vh;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        letter-spacing: 10px;
+        font-weight: bold;
+        font-size: 30px;
+}
+#hum{
+    display: none;
+}
+.rot{
+    transform: rotate(360deg);
+}
+@media(max-width:768px){
+    header .container{
+        font-size: 20px;  
+        letter-spacing: 5px;
+    }
+    nav ul{
+   flex-direction: column;
+   background-color: white;
+   color: black;
+   position: absolute;
+   top: 10%;
+   left: -80%;
+   width: 80%;
+   height: 50vh;
+   align-items: center;
+   justify-content: center;
+    }
+    nav ul li{
+        margin:30px 0;
+    }
+    #hum{
+        display: flex;
+    }
+}
+@media(max-width:480px){
+    header .container{
+        font-size: 15px;  
+        letter-spacing: 5px;
+        text-align: center  ;
+    }
+}
+section .box>*{
+    width: 100%;
+}
+section{
+display: grid;
+grid-template-columns: repeat(2,minmax(280px,1fr));}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section .box h1{
+    font-size:40px;
+    font-weight: bold;
+   
+}
+
+.box h1,.box p,.box a{
+    margin:  10px 0;
+    font-size: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+}
+section .box a{
+    text-decoration: none;
+    color: black;
+  
+}
+
+@media(max-width:557px){
+    section{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));}
+        .box,.box img{
+            height: 30vh;
+        }
+}
+@media(max-width:850px){
+ section .box h1{
+     font-size: 30px;
+ }
+    .box h1,.box p,.box a{
+        font-size: 15px;
+    } 
+}
+@media(max-width:620px){
+    section .box h1{
+        font-size: 20px;
+    }
+       .box h1,.box p,.box a{
+           font-size: 10px;
+       } 
+
+   }
+   section .box:nth-child(5) h3{
+       color: white;
+       margin-bottom:10px;
+   }
+   section .box:nth-child(5){
+       font-size: 20px;
+       font-weight: bold;
+   }
+   section .box:nth-child(6) h3{
+    color: white;
+    margin-bottom:10px;
+}
+section .box:nth-child(6){
+    font-size: 20px;
+    font-weight: bold;
+}
+ #spn1{
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+ }
+ #spn2{
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    height:  25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+ }
+   .poeple .commentaire{
+       text-align: center;
+      display: flex;
+      justify-content: center;
+ 
+   }
+   .poeple  h1{
+       text-align: center;
+      margin-top: 50px;
+   }
+   .poeple .commentaire img{
+       margin: 20px 0;
+       border-radius: 50%;
+       width: 50px;
+       height: 50px;
+   }
+   .poeple .commentaire>*{
+       font-size: 20px;
+       margin:100px 100px;
+   }
+main{
+    display: flex;
+}
+.box2{
+    height: 100%;
+}
+main .box2 img{
+    width: 100%;
+    height: 100%;
+}
+@media(max-width:557px){
+    main{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+
+    }
+    .poeple .commentaire{
+    flex-direction: column;
+       
+    }
+    .poeple .commentaire>*{
+        margin:25px 0;
+    }
+    section .box:nth-child(5){
+        font-size: 12px;
+    }
+ section .box:nth-child(6){
+     font-size: 12px;
+ }
+  #spn1{
+align-items: center;
+   width: 100%;
+  }
+  #spn2{
+    align-items: center;
+    width: 100%;
+  }
+  
+}
+footer
+{
+    background-color: rgb(144, 209, 138);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer #all{
+    display: flex;
+    list-style: none;
+  
+}
+footer #all li{
+    margin: 25px 15px;
+}
+footer h3{
+    margin: 20px 0;
+}
+footer #social{
+    display: flex;
+    list-style: none;
+  
+}
+footer #social li{
+    margin: 20px 15px;
+}

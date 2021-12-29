@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pong Hau k'i</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+.row3-col3 {
+    height: 100%;
+    width: 100%;
+}
+.row3-col3 {
+    float: left;
+}
+.row3-col3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row3-col3-child {
+    width: 70%;
+    height: 70%;
+}
+.row3-col3-child>div {
+    width: 20%;
+    height: 35%;
+    float: left;
+    margin: 6.5%;
+    position: relative;
+    bottom: 6%;
+    /* box-shadow: -2px 14px 28px rgba(0, 0, 0, 0.25), -2px 10px 10px rgba(0, 0, 0, 0.22); */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+.row3-col3-child>div:hover {
+    box-shadow: -2px 14px 28px rgba(0, 0, 0, 0.25), -2px 10px 10px rgba(0, 0, 0, 0.22);
+}
+.blue {
+    background-color: #0092dc;
+font-size: 130px;
+text-align: center;
+}
+.white {
+    background-color: #fff;
+}
+.card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card:hover {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+p{
+   text-align: center;
+   font-size:50px; 
+}
+#c4{
+    position: relative;
+    left: 33%;
+}
+#c1{
+    position: relative;
+    top: 25%;
+}
+#bt{
+    position: relative;
+    left: 46%;
+    width: 8%;
+    height: 5vh;
+    background-color: blue;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+#bt:hover{
+background-color: rgb(65, 65, 65);
+color: rgb(0, 255, 136);
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 400px;
+        height: 400px;
+        margin-top: 80px;
+    }
+    .row3-col3-child>div{
+        bottom: -2%;
+    }
+    .blue{
+        font-size: 68px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 600px;
+        height: 400px;
+    }
+    h1{
+        font-size: 10px;
+    }
+    .blue{
+        font-size: 80px;
+    }
+    #bt{
+        width: 100px;
+        position: relative;
+        left: 40%;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .container {
+        width: 400px;
+        height: 350px;
+        margin-top: 15px;
+    }
+    h1{
+        font-size: 10px;
+    }
+    .blue{
+        font-size: 60px;
+    }
+    #bt{
+        width: 80px;
+        position: relative;
+        left: 40%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .container {
+        width: 350px;
+        height: 350px;
+        margin-top: 15px;
+    }
+    h1{
+        font-size: 10px;
+    }
+    .blue{
+        font-size: 60px;
+    }
+    #bt{
+        width: 80px;
+        position: relative;
+        left: 40%;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .container {
+        width: 300px;
+        height: 350px;
+        margin-top: 15px;
+    }
+    h1{
+        font-size: 10px;
+    }
+    .blue{
+        font-size: 55px;
+    }
+    #bt{
+        width: 80px;
+        position: relative;
+        left: 40%;
+    }
+}
+
+    </style>    
+</head>
+<body onload="start()">
+    <p id="p">Player X</p>
+	 <div class="container card">
+        <div class="row3-col3 blue">
+            <div class="row3-col3-child clearfix white">
+                <div class="blue" onclick="game(this.id)" id="c0"></div>
+                <div class="blue" onclick="game(this.id)" id="c1"></div>
+                <div class="blue" onclick="game(this.id)" id="c2"></div>
+                <div class="blue" onclick="game(this.id)" id="c3"></div>
+                <div class="blue" onclick="game(this.id)" id="c4"></div>
+        </div>
+        </div>
+        </div>
+        <input type="button" onclick="reset()" value="Play Again" name="" id="bt">
+</body>
+<script>
+    var ok = true
+    let playgame = true
+    let play = []
+    let block = true
+    let list = []
+    let mem = []
+    function reset(){
+        location.reload()
+    }
+    function start(){
+        document.getElementById('c0').innerHTML='X'
+        play[0]='c0'
+        document.getElementById('c3').innerHTML='Y'
+        play[1]='c3'
+        document.getElementById('c2').innerHTML='X'
+        play[2]='c2'
+        document.getElementById('c4').innerHTML='Y'
+        play[3]='c4'
+    }
+    function del(id,play){
+        l=[]
+        for(i=0;i<play.length;i++){
+            if(play[i]!=id)
+             l.push(play[i])
+        }
+        return l
+    }
+    function vide(id){
+  if(document.getElementById(id).innerHTML!='')
+  playgame=false    
+else
+playgame=true 
+if(play.length==4 && !playgame && ok && document.getElementById(id).innerHTML=='X'){
+document.getElementById(id).innerHTML=''
+play=del(id,play)
+mem[0] = id
+}else
+if(play.length==4 && !playgame && !ok && document.getElementById(id).innerHTML=='Y'){
+document.getElementById(id).innerHTML=''
+play=del(id,play)
+mem[0] = id
+}
+if(play.length==4)
+playgame=false
+else
+if(play.length==3 && mem[0]==list[0])
+playgame=false
+    }
+    function openbloc(id){
+if(document.getElementById('c0').innerHTML=='' && play.length==4  && (list[0]=='c4' || list[0]=='c2')){
+block = false
+}  
+ else if(document.getElementById('c2').innerHTML=='' && play.length==4  && (list[0]=='c0' || list[0]=='c3')){
+block = false
+}  
+else if(document.getElementById('c4').innerHTML=='' && play.length==4  && list[0]=='c0' ){
+block = false
+}   
+else if(document.getElementById('c3').innerHTML=='' && play.length==4  && list[0]=='c2' ){
+block = false
+}   
+else
+block = true
+}
+function gameplay(id){
+if(document.getElementById('c1').innerHTML=='X' && document.getElementById('c4').innerHTML=='X' && document.getElementById('c3').innerHTML=='Y' && document.getElementById('c0').innerHTML=='Y'){
+document.getElementById('p').innerHTML='Player  X Wen'
+block = false
+}
+else if(document.getElementById('c1').innerHTML=='Y' && document.getElementById('c4').innerHTML=='Y' && document.getElementById('c3').innerHTML=='X' && document.getElementById('c0').innerHTML=='X'){
+document.getElementById('p').innerHTML='Player  Y Wen'
+block = false
+}
+else if(document.getElementById('c3').innerHTML=='Y' && document.getElementById('c1').innerHTML=='Y' && document.getElementById('c4').innerHTML=='X' && document.getElementById('c2').innerHTML=='X'){
+    document.getElementById('p').innerHTML='Player  Y Wen'
+block = false
+}
+else if(document.getElementById('c3').innerHTML=='X' && document.getElementById('c1').innerHTML=='X' && document.getElementById('c4').innerHTML=='Y' && document.getElementById('c2').innerHTML=='Y'){
+    document.getElementById('p').innerHTML='Player  X Wen'
+block = false
+}
+}
+function game(id){
+    list[0]=id
+    openbloc(id)
+    if(block){
+    vide(id)
+    if(playgame){
+    if(ok){
+document.getElementById('p').innerHTML='Player Y'
+document.getElementById(id).innerHTML='X'
+ok=false
+play.push(id)
+    }else{
+document.getElementById('p').innerHTML='Player X'
+document.getElementById(id).innerHTML='Y'
+ok=true  
+play.push(id)
+    }
+ gameplay(id)
+}
+}
+}
+</script>
+</html>

@@ -1,0 +1,420 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+html{
+    scroll-behavior: smooth;
+}
+header{
+    height: 100vh;
+    min-height:1000px;
+}
+header nav{
+    display: flex;
+    height: 18vh;
+    width: 95%;
+    margin: auto;
+    align-items: center;
+}
+header nav .logo{
+    flex: 1;
+}
+header nav ul{
+  display: flex;
+  list-style: none;
+}
+header nav ul li a{text-decoration: none;}
+header nav ul li{
+    margin:0 20px;
+    font-size: 22px;
+  }
+  @media(max-width:599px){
+    header nav ul li{
+        margin:0 10px;
+        font-size: 18px;
+      }
+      header nav .logo img{
+       width:100px;
+    
+    }
+  }
+  @media(max-width:382px){
+    header nav ul li{
+        margin:0 5px;
+        font-size: 14px;
+      }
+      header nav .logo img{
+       width:80px;
+    
+    }
+  }
+  header .container{
+      display: flex;
+      width: 95%;
+      margin: auto;
+      margin-top: 80px;
+  }
+  header .container .box:nth-child(1){
+   flex: 1;
+   align-self: center;
+}
+  header .container .box:nth-child(2) img{
+      width: 500px;
+  }
+  header .container h1,header .container p,header .container .form{
+ margin: 25px 0;
+}
+header .container .box:nth-child(1) .form input{
+width:350px;
+padding: 10px;
+font-size: 20px;
+border-radius: 8px;
+outline: none;
+}
+header .container .box:nth-child(1) .form button{
+    padding: 10px;
+    font-weight: bold;
+    font-size:20px;
+    width: 150px;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    outline: none;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+}
+header .container .box:nth-child(1) .form button,    header .container .box:nth-child(1) .form input{
+    margin: 15px 0;
+  }
+@media(max-width:970px){
+    header .container{
+       flex-direction: column-reverse;  
+       text-align: center;
+    } 
+    header .container .box:nth-child(2){
+        align-self: center;
+    }
+    header .container .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .container .box:nth-child(1) .form button,    header .container .box:nth-child(1) .form input{
+      margin: 15px 0;
+        width: 90%;
+    }
+}
+@media(max-width:520px){
+    header .container{
+        font-size: 13px;
+    }
+    header .container .box:nth-child(2) img{
+        width: 400px;
+    }
+}
+@media(max-width:405px){
+    header .container{
+        font-size: 10px;
+    }
+    header .container .box:nth-child(2) img{
+        width:280px;
+    }
+}
+header .decore .image{
+    width: 100%;
+    height:110px;
+    background-image: url('images/bg-curve-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover
+}
+header .decore{
+    height:294px;
+    display: flex;
+    align-items: flex-end;
+}
+section{
+    background-color: rgba(236, 232, 255, 0.452);
+}
+section .bgcolor{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+   height: 900px;
+}
+section .bgcolor .box:nth-child(1){
+    flex: 1;
+}
+section .text h1,section .text p:nth-child(1),section .text p:nth-child(2),section .commentaire{
+    margin: 25px 0;
+}
+section .commentaire a,section .commentaire .profile{
+    margin:40px 0;
+}
+section .commentaire .profile{
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+section .commentaire .profile .photo img{
+    border-radius: 50%;
+    width: 40px;
+    height:40px;
+}
+section .commentaire .profile .photo{
+    display: flex;
+    font-size: 8px;
+}
+section .commentaire .profile .photo .name{
+    align-self: center;
+}
+section .commentaire .profile .photo .name,section .commentaire .profile .photo img{
+    margin: 0 3px;
+}
+section .commentaire .profile .photo, section .commentaire .profile img,section .commentaire .profile p{
+    margin: 5px 0; 
+}
+section .box:nth-child(1) .text h1{
+    font-size:40px;
+}
+section .text{
+    font-size: 20px;
+}
+section .box:nth-child(1) .commentaire .lien a{
+color: rgb(102, 185, 122);
+display: flex;
+text-decoration: none;
+}
+section .box:nth-child(1) .commentaire .lien a:after{
+content: '';
+border-bottom: rgb(102, 185, 122) solid 1px;
+
+display: block;
+    }
+section .box:nth-child(1) .commentaire .profile,section .box:nth-child(1) .commentaire p,section .box:nth-child(1) .commentaire .photo{
+    margin: 20px 0;
+    }
+
+@media(max-width:970px){
+    section{
+margin-top: 50px;
+    }
+    section .bgcolor{
+        display: flex;
+        width: 90%;
+        margin: auto;
+        align-items: center;
+        height: 1100px;
+       flex-direction: column-reverse;  
+       text-align: center;
+       position: relative;
+       top: 50px;
+       font-size: 20px;
+    } 
+    header .container .box:nth-child(2){
+        align-self: center;
+    }
+    header .container .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header .container .box:nth-child(1) .form button,    header .container .box:nth-child(1) .form input{
+      margin: 15px 0;
+        width: 90%;
+    }
+    section .text{
+      text-align: left;
+    }
+    section .text h1{
+        text-align: center;
+      }
+      section .commentaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    section .commentaire .profile{
+        text-align: left;
+        width: 350px;
+   font-size: 18px;
+    }
+}
+@media(max-width:570px){
+    section .box:nth-child(1) .text h1{
+        font-size:35px;
+    }
+    section .text{
+        font-size: 20px;
+    }
+    section .box:nth-child(2) img{
+       width: 400px;
+    }
+    section .bgcolor{
+height: 1200px;
+    } 
+
+}
+@media(max-width:522px){
+    section .box:nth-child(2) img{
+        width:350px;
+     }
+     section .commentaire .profile{
+        text-align: left;
+        width:300px;
+   font-size: 18px;
+    }
+
+}
+@media(max-width:320px){
+    section .box:nth-child(2) img{
+        width:250px;
+     }
+     section .box:nth-child(1) .text h1{
+        font-size:20px;
+    }
+    section .text{
+        font-size:12px;
+    }
+    section .commentaire .profile{
+        text-align: left;
+        width:250px;
+   font-size: 18px;
+    }
+}
+@media(max-width:970px){
+    header .container .box:nth-child(2){
+        align-self: center;
+    }
+    header .container .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header .container .box:nth-child(1) .form button,    header .container .box:nth-child(1) .form input{
+      margin: 15px 0;
+        width: 90%;
+    }
+
+}
+main{
+    background-color: rgb(93, 74, 148);
+    color: white;
+    height:250px;
+}
+main .container_main{
+    width: 90%;
+    margin: auto;
+    display:flex;
+    height: 250px;
+    align-items: center;
+}main .container_main .box:nth-child(1){
+    flex: 1;
+}
+main .container_main .box:nth-child(1) h1,  main .container_main .box:nth-child(1) p{
+    margin: 20px 0;
+}main .container_main .box:nth-child(2) .inpt,  main .container_main .box:nth-child(2) button{
+    margin: 15px 0;
+}
+main .container_main .box:nth-child(2) button{
+    width: 150px;
+    padding: 10px;
+    background: rgb(68, 0, 255);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}main .container_main .box:nth-child(2) .inpt input{
+width: 250px;
+padding: 5px;
+font-size: 18px;
+border: none;
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+border-radius: 5px;
+}
+@media(max-width:824px){
+    main{
+        height:300px;
+    }
+    main .container_main{
+       flex-direction: column;
+       text-align: center;
+    }
+    main .container_main .box:nth-child(2) .inpt input, main .container_main .box:nth-child(2) button{
+        width: 90%;
+        }
+}
+@media(max-width:451px){
+    main{
+        height:400px;
+    }
+}
+footer{
+    background-color:rgb(12, 12, 82) ;
+    color: white;
+}
+footer .container_footer{
+    margin-top: 50px;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    height: 350px;
+}
+footer .container_footer .box:nth-child(1){
+    align-self: flex-start;
+    margin-top: 50px;
+}
+footer .container_footer .box:nth-child(1) img{
+   filter: brightness(0) invert(1);
+}
+footer .container_footer .box:nth-child(1) img,footer .container_footer .box:nth-child(1) p{
+    margin: 5px 0;
+    
+}
+footer .container_footer .box:nth-child(1) p{
+    display: flex;
+    align-items: center;
+}
+footer .container_footer .box:nth-child(1) p span{
+ margin-left: 10px;
+}
+footer .container_footer .box ul li{
+list-style:none;
+}
+footer .container_footer .box ul li{
+    margin: 15px 0;
+    font-size: 18px;
+}
+footer .container_footer .box:nth-child(4) ul{
+  display: flex;
+}
+footer .container_footer .box:nth-child(4) ul li{ 
+   margin:0 15px;
+  }
+  @media(max-width:824px){
+    footer .container_footer{
+flex-direction: column;
+height: 400px;
+    }
+    footer{
+        height: 500px;
+    }
+
+    footer .container_footer .box:nth-child(2){
+    align-self: flex-start;
+    }
+    footer .container_footer .box:nth-child(3){
+        align-self: flex-start; 
+    }
+
+}

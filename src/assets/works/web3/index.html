@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopStudio</title>
+    <link rel="stylesheet" href="style.css">
+    <script> 
+     nav_open= () =>{
+         document.getElementById("navbar").style["left"]="0"
+     }
+     nav_close= () =>{
+         document.getElementById("navbar").style["left"]="-1000px"
+     }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>LoopStudios</h1>
+            <ul id="navbar0">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Supports</a></li>
+               
+            </ul>
+            <ul id="navbar">
+                <h1 id="title_nav"> <span> LoopStudios </span>  <img id="hum_c" onclick="nav_close()" src="./images/icon-close.svg"></h1>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Supports</a></li>   
+               
+            </ul>
+            
+            <img id="hum" onclick="nav_open()" src="./images/icon-hamburger.svg">
+        </nav>
+        <div class="container">
+            <div class="border">
+            IMMERSIVE <br> EXPERIENCES <br> THAT DELIVER
+        </div>
+        </div>
+    </header>
+<section>
+    <div class="box">
+        <img src="./images/desktop/image-interactive.jpg">
+    </div>
+    <div class="box">
+        <div class="text">
+            <h1>THE LEADER IN <br> INTERACTIVE VR</h1>
+            <p>Lorem ipsum, dolor sit amet <br>  consectetur adipisicing elit. <br> Vel repudiandae dolores odit <br> accusantium reprehenderit <br> voluptatibus.</p>
+        </div>
+    </div>
+</section>
+<main>
+    <div class="text">          
+        <h1>OUR CREATION</h1>
+        <a href="#">SEE ALL</a>
+    </div>
+    <div class="gallery">
+        <div class="photo"><div class="opac"></div><h3>DEEP <br> EARTH</h3></div>
+        <div class="photo"><div class="opac"></div><h3>NIGHT<br>ARCADE</h3></div>
+        <div class="photo"><div class="opac"></div><h3>SOCCER<br>TEAM VR</h3></div>
+        <div class="photo"><div class="opac"></div><h3>THE<br>GRID</h3></div>
+        <div class="photo"><div class="opac"></div><h3>FORM UP<br>ABROVE VR</h3></div>
+        <div class="photo"><div class="opac"></div><h3>POCKET<br>BREALIS</h3></div>
+        <div class="photo"><div class="opac"></div><h3>THE<br>CURIOSITY</h3></div>
+        <div class="photo"><div class="opac"></div><h3>MAKE IT<br>FISHEYE</h3></div>
+        <a  href="#">SEE ALL</a>
+    </div>
+</main>
+
+</body>
+</html>

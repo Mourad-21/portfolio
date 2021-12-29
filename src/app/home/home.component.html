@@ -1,0 +1,60 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Tourney:ital,wdth,wght@0,100,100;0,100,500;0,125,100;1,100,300&display=swap" rel="stylesheet">
+<div (click)="active();show()" class="hamburger" id="ham">
+    <input id="chek" type="checkbox">
+    <div class="bar">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+    </div>
+</div>
+<div class="content1">
+<div class="fixednav">
+    <div class="navbar" id="nb" >
+        <ul id="ul">
+            <a routerLink="" (click)="delshow();topp()"><li>Home</li></a>
+            <a routerLink="" (click)="scrolleventh();  delshow()"><li>About</li></a>
+            <a routerLink="" (click)="scrolleventw();  delshow()"><li>Works</li></a>
+            <a routerLink="" (click)="scrollevents();  delshow()"><li>Skills</li></a>
+            <a routerLink="" (click)="scrolleventc();  delshow()"><li>Contact</li></a>
+            
+        </ul>
+    </div>
+</div>
+    <div class="home">
+        <div class="wrapper">
+            <div    data-aos="fade-down"     class="static-txt">I'm a</div>
+            <ul class="dynamic-txts">
+              <li><span>Developer</span></li>
+              <li><span>Freelancer</span></li>
+              <li><span>Designer</span></li>
+              <li><span>Beat Maker</span></li>
+            </ul>
+          </div>
+        <div  data-aos="flip-right" class="box">
+            <div class="img"></div>
+            <h2>Mourad</h2>
+            <h6 style="color: aqua;"><span style="color: rgb(248, 24, 99)">Ben</span> Ammar</h6>
+            <i style="color: rgb(248, 24, 99)"  class="fab fa-angular fa-2x"></i>
+        </div>
+    </div>
+
+</div>
+<div data-aos="fade-up"  class="info">
+    <div class="ask">
+      <p>Hello Friend Welcome To My Profile I am Mourad . Do you like to Play My Games ?&nbsp;&nbsp;<span id="yn">Yes </span> <input  routerLink="/game"  id="yes" name="c1"  type="radio"><span id="yn"> No </span> <input id="no"  checked name="c1" type="radio"></p>
+</div>
+</div>
+<div id="ab">
+<div id="about"></div>
+</div>
+<div id="wo">
+   <div id="works"></div>
+    </div>
+    <div id="sk">
+       <div id="skills"></div>
+        </div>
+        <div id="co">
+            <div id="contact"></div>
+             </div>

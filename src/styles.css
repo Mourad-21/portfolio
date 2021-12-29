@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+    scroll-behavior: smooth;
+    background: black;
+  
+}
+html,body{
+	max-width: 100%;
+	overflow-x: hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:cursive;
+    background: url(./assets/Images/background.png);
+    background-position: center;
+    background-size: cover;
+  
+}
