@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-O Gamme</title>
+    <style>
+         #xo{
+             position: absolute;
+             top: 40%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+             display:flex;
+             font-size: 80px;
+         }
+        .case{
+           text-shadow: 0 0 0 yellow,0 0 5px yellow ,0 0 10px yellow;
+         color: black;
+         background:rgb(10, 0, 0) ;
+           text-align: center;
+           width:150px;
+           height:130px;
+           margin: 5px;
+           cursor: pointer;
+           font-size: 120px;
+        }
+        #menu{
+          content: '';
+          background:radial-gradient(yellow,black);
+          width: 470px;
+          height: 420px;
+          position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+             font-size: 30px;
+             border-left: 15%;
+        }
+        #p1{
+          position:absolute;
+          bottom: 23%;
+        left: 46%;
+        font-size: 30px;
+        text-shadow: 0 0 0 yellow,0 0 5px yellow ,0 0 10px yellow;
+         color: black;
+         background:rgb(10, 0, 0) ;
+         border-radius: 10%;
+        }
+        #bt{
+          position:absolute;
+          bottom: 21%;
+        left: 45%;
+          font-size: 15px;
+          width: 10%;
+          height: 4%;
+          text-shadow: 0 0 0 yellow,0 0 5px yellow ,0 0 10px yellow;
+         color: black;
+         background:rgb(10, 0, 0) ;
+         cursor: pointer;
+         border: none;
+         border-radius: 15px;
+        }
+        #pc{
+          cursor: pointer;
+        }
+        span{
+          background-color: rgb(163, 163, 163);
+          text-align: center;
+          position: relative;
+          left: 8%;
+          border-radius: 5%;
+          color: white;
+          text-shadow: 0 0 0 yellow,0 0 5px yellow ,0 0 10px yellow;  
+        }
+        #text{
+         position: relative;
+         top: 35%;
+        }
+        @media only screen and (max-width: 1024px) {
+          .case{
+           width: 130px;
+           height:120px;
+           font-size: 110px;
+        }
+        #p1{
+          position:absolute;
+          bottom: 22%;
+          left: 44% ;
+        }
+        #bt{
+          position:absolute;
+          bottom: 20%;
+        left: 40%;
+          font-size: 15px;
+          width: 25%;
+          height: 4%;
+        }
+        #menu{
+          width:410px;
+          height: 370px;
+        }
+        }
+        @media only screen and (max-width: 768px) {
+          .case{
+           width: 130px;
+           height:120px;
+           font-size: 110px;
+        }
+        #p1{
+          position:absolute;
+          bottom: 22%;
+          left: 44% ;
+        }
+        #bt{
+          position:absolute;
+          bottom: 20%;
+        left: 40%;
+          font-size: 15px;
+          width: 25%;
+          height: 4%;
+        }
+        #menu{
+          width:410px;
+          height: 370px;
+        }
+        }
+        @media only screen and (max-width: 425px) {
+          .case{
+           width: 130px;
+           height:120px;
+           font-size: 110px;
+        }
+        #p1{
+          position:absolute;
+          bottom: 22%;
+          left: 32% ;
+        }
+        #bt{
+          position:absolute;
+          bottom: 20%;
+        left: 32%;
+          font-size: 15px;
+          width: 25%;
+          height: 4%;
+        }
+        #menu{
+          width:410px;
+          height: 370px;
+        }
+        }
+        @media only screen and (max-width: 375px) {
+          .case{
+           width: 115px;
+           height:92px;
+           font-size: 85px;
+        }
+        #p1{
+          position:absolute;
+          bottom: 30%;
+          left: 32% ;
+        }
+        #bt{
+          position:absolute;
+          bottom: 30%;
+        left: 32%;
+          font-size: 15px;
+          width: 30%;
+          height: 4%;
+        }
+        #menu{
+          width: 367px;
+          height: 290px;
+       
+        }
+        }
+        @media only screen and (max-width: 320px) {
+            .case{
+           width:95px;
+           height:90px;
+           font-size: 80px;
+        }
+        #p1{
+          position:absolute;
+          bottom: 30%;
+          left: 32% ;
+        }
+        #bt{
+          position:absolute;
+          bottom: 30%;
+        left: 30%;
+          font-size: 15px;
+          width: 40%;
+          height: 4%;
+        }
+        #menu{
+          width: 310px;
+          height: 290px;
+        }
+        }
+    </style>
+</head>
+<body>
+  <p id="p1"> &nbsp;Player X</p>  
+    <div id="xo">
+        <div>
+        <div class="case" id="c1" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+        <div class="case" id="c2" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+        <div class="case" id="c3" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+    </div> 
+    <div>
+        <div class="case" id="c4" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+        <div class="case" id="c5" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+        <div class="case" id="c6" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+    </div>
+    <div>
+        <div class="case" id="c7" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+        <div class="case" id="c8" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+        <div class="case" id="c9" onmouseup="insert(this.id)" onclick="insert(this.id)"></div>
+          </div>
+    <div id="menu">
+      <div id="text">
+      <span onclick="comp1()" name='pc' id="pc">Play VS Computer</span><br>
+      <span onclick="comp2()" name='pf' id="pc">Play VS Friend</span><br>
+    </div>
+    </div>
+    </div>
+    <input type="button" value="reset" onclick="zero()" id="bt"><br>
+
+</body>
+<script>
+    var list=[]
+    result=false
+    var turn = true;
+         function comp1(){
+            rep='2'
+            document.getElementById('menu').style['display']='none'
+         }
+         function comp2(){
+            rep='1'
+            document.getElementById('menu').style['display']='none'
+         }
+    function zero(){
+    var list=[]
+    result=false
+    var turn = true;
+    location.reload()
+    }
+    function computer(){
+       x=Math.round(Math.random()*10)
+      while(x==0)
+      x=Math.round(Math.random()*10)
+      if(x==10)
+      x=x-1
+      actif=document.getElementById('c'+x)
+      if(actif.innerHTML==''){
+      actif.innerHTML='O'
+      }
+      else
+      computer()
+    }
+    function color(a,b,c){
+        document.getElementById(a).style.color='white'
+        document.getElementById(b).style.color='white'
+        document.getElementById(c).style.color='white'
+        document.getElementById(a).style['transition']='.8s'
+        document.getElementById(b).style['transition']='.8s'
+        document.getElementById(c).style['transition']='.8s'
+    }
+     function wengame(){
+      for(i=1;i<10;i++){
+          list[i]=document.getElementById('c'+i).innerHTML;
+      }
+      if(list[1]==list[4] && list[4]==list[7] && list[1]!=""){
+     var w=list[1]  
+      result=true
+      color('c1','c4','c7')
+    }
+      if(list[2]==list[5] && list[5]==list[8] && list[2]!=""){
+        var w=list[2]
+    result=true
+    color('c2','c5','c8')
+}
+      if(list[3]==list[6] && list[6]==list[9] && list[3]!=""){
+        var w=list[3]
+      result=true
+      color('c3','c6','c9')}
+      //
+      if(list[1]==list[2] && list[2]==list[3] && list[1]!=""){
+        var w=list[1]
+      result=true
+      color('c1','c2','c3')}
+      if(list[4]==list[5] && list[5]==list[6] && list[4]!=""){
+        var w=list[4]
+      result=true 
+      color('c4','c5','c6')}
+      if(list[7]==list[8] && list[8]==list[9] && list[7]!=""){
+        var w=list[7]
+      result=true 
+      color('c7','c8','c9')}
+      //
+      if(list[1]==list[5] && list[5]==list[9] && list[1]!=""){
+        var w=list[1]
+      result=true 
+      color('c1','c5','c9')}
+      if(list[7]==list[5] && list[5]==list[3] && list[7]!=""){
+        var w=list[7]
+      result=true 
+      color('c7','c5','c3')}
+      if(result && w=='X'){
+        document.getElementById('p1').innerHTML='Player X Wen' 
+    }else if(result && w=='O'){
+        document.getElementById('p1').innerHTML='Player O Wen' 
+    }
+         }
+    function insert(id){ 
+        var s = document.getElementById(id)
+        if(result==false){
+        if(turn && s.innerHTML==""){
+        s.innerHTML="X"
+          turn = false
+         document.getElementById('p1').innerHTML='&nbsp;Player O'}
+         else if(!turn && rep=='2'){
+            computer()
+          turn = true 
+          document.getElementById('p1').innerHTML='&nbsp;Player X'}
+          else if(!turn && s.innerHTML=="" && rep=='1'){
+            s.innerHTML="O"
+          turn = true 
+          document.getElementById('p1').innerHTML='&nbsp;Player X'}
+        wengame()
+    }
+    }
+</script>
+</html>

@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>snake</title>
+     <style>
+         #can{
+             background: black;
+         }
+     </style>
+ </head>
+ <body onload="game()">
+     <canvas id="can" width="500" height="500"></canvas>
+ </body>
+ <script>
+var cnv = document.getElementById('can')
+var ctx = cnv.getContext('2d')
+let speed = 7 
+let titlecount = 20
+let size = cnv.width/titlecount-2
+let headX = 10
+let headY = 10
+let Xvelocity = 0
+let Yvelocity = 0
+let x1 = 15
+let x2 = 15
+let listX = []
+let listY = []
+let long = 0
+let die = false
+let pscore = 0
+alert("To play this game use keybord!")
+function game(){
+    if(die){
+        ctx.fillStyle='white'
+        ctx.font='50px Verdana'
+        ctx.fillText('Game Over',cnv.width/6.5,cnv.width/2)
+    return
+}
+    cleargame()
+    score()
+    body()
+    drawSnake()
+    darwpomme()
+    loopgame()
+    setTimeout(game,1000/speed)
+}
+function cleargame(){
+    ctx.fillStyle = 'black'
+    ctx.fillRect(0,0,cnv.width,cnv.height)
+}
+function drawSnake(){
+    ctx.fillStyle='red'
+    ctx.fillRect(headX * titlecount,headY * titlecount,size,size)    
+}
+function loopgame(){
+headX = headX + Xvelocity
+headY = headY + Yvelocity
+death()
+}
+document.body.addEventListener('keydown',keyDown)
+function keyDown(event){
+    if (event.keyCode==38){
+        if(Yvelocity==1)
+        
+        return
+        Xvelocity = 0
+        Yvelocity = -1
+    }
+    if (event.keyCode==40){
+        if(Yvelocity==-1)
+        return
+        Xvelocity = 0
+        Yvelocity = 1
+    }
+    if (event.keyCode==37){
+        if(Xvelocity==1)
+        return
+        Xvelocity = -1
+        Yvelocity = 0 
+    }
+    if (event.keyCode==39){
+        if(Xvelocity==-1)
+        return
+        Xvelocity = 1
+        Yvelocity = 0
+    }
+}
+function score(){
+    ctx.fillStyle='white'
+    ctx.font='25px Verdana'
+    ctx.fillText('Score:'+pscore,cnv.width-120,30)
+}
+function body(){
+ctx.fillStyle='orange'
+for(let i=0;i<listX.length;i++){
+    let part1 = listX[i]
+    let part2 = listY[i]
+    ctx.fillRect(part1*titlecount,part2*titlecount,size,size)
+}
+listX.push(headX)
+listY.push(headY)
+while(listY.length>long){
+listX.shift()
+listY.shift()  
+}
+}
+function darwpomme(){
+    ctx.fillStyle = 'yellow'
+    ctx.fillRect(x1*titlecount,x2*titlecount,size,size)
+    if(headX==x1 && headY == x2){
+        x1=Math.round(Math.random()*titlecount)
+        x2=Math.round(Math.random()*titlecount)
+        while(x1 == 20 || x1 == 0)
+        x1=Math.round(Math.random()*titlecount)
+        while(x2 == 20 || x2 == 0)
+        x2=Math.round(Math.random()*titlecount)
+    long++
+    pscore++
+    }
+}
+function verif(x,y){
+    ok=false
+    if(Xvelocity == 0 && Yvelocity == 0)
+    return false
+    for(let i=0 ;i<listX.length ;i++){
+        if(listX[i]==x && listY[i] == y){
+        ok=true
+        break
+    }
+    }
+return ok
+}
+function death(){
+if(headX==cnv.width/titlecount || headX<0 || headY==cnv.height/titlecount || headY<0 || verif(headX,headY)){
+die = true
+}
+}
+ </script>
+ </html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card</title>
+    <style>
+                 .game{
+             position: absolute;
+             top: 40%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+             display:flex;
+             font-size: 150px;
+         }
+        .case{
+           text-align: center;
+           background-color: greenyellow;
+           width:200px;
+           height:200px;
+           margin: 5px;
+           cursor: pointer;
+        }
+        #pp{
+            position: absolute;
+            bottom:0;
+            left: 32%;
+            font-size: 65px;
+        }
+        @media only screen and (max-width: 1024px) {
+            .case{
+           width:240px;
+           height:180px;
+        }
+        .game{
+            font-size: 180px;
+        }
+        #pp{
+            position: absolute;
+            bottom:0%;
+            left: 20%;
+            font-size:70px;
+        }
+        }
+        @media only screen and (max-width: 768px) {
+            .case{
+           width:180px;
+           height:180px;
+        }
+        .game{
+            font-size: 170px;
+        }
+        #pp{
+            position: absolute;
+            bottom:0%;
+            left: 15%;
+            font-size:55px;
+        }
+        }
+        @media only screen and (max-width: 425px) {
+            .case{
+           width:95px;
+           height:180px;
+        }
+        .game{
+            font-size: 170px;
+        }
+        #pp{
+            position: absolute;
+            bottom:10%;
+            left: 19%;
+            font-size:30px;
+        }
+        }
+        @media only screen and (max-width: 375px) {
+            .case{
+           width:83px;
+           height:180px;
+        }
+        .game{
+            font-size: 150px;
+        }
+        #pp{
+            position: absolute;
+            bottom:12%;
+            left: 12%;
+            font-size:30px;
+        }
+        }
+        @media only screen and (max-width: 320px) {
+            .case{
+           width:70px;
+           height:150px;
+        }
+        .game{
+            font-size: 130px;
+        }
+        #pp{
+            position: absolute;
+            bottom:18%;
+            left: 8%;
+            font-size:30px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div>
+        <div class="case" onclick="insert(this.id)" id="c0">?</div>
+        <div class="case" onclick="insert(this.id)" id="c1">?</div>
+        <div class="case" onclick="insert(this.id)" id="c2">?</div>
+    </div>
+     <div>
+        <div class="case" onclick="insert(this.id)" id="c3">?</div>
+        <div class="case" onclick="insert(this.id)" id="c4">?</div>
+        <div class="case" onclick="insert(this.id)" id="c5">?</div>
+    </div>
+<div>
+        <div class="case" onclick="insert(this.id)" id="c6">?</div>
+        <div class="case" onclick="insert(this.id)" id="c7">?</div>
+        <div class="case" onclick="insert(this.id)" id="c8">?</div>
+    </div>
+    <div>
+        <div class="case" onclick="insert(this.id)" id="c9">?</div>
+        <div class="case" onclick="insert(this.id)" id="c10">?</div>
+        <div class="case" onclick="insert(this.id)" id="c11">?</div>
+    </div>
+    </div>
+    <p id="pp"></p>
+</body>
+<script>
+    alpha=['#','€','8','!','$','{','#','€','8','!','$','{']
+    notAlpha=[]
+    idw=[]
+    yeswen=[]
+    character=[]
+    yesrand=false
+    game=true
+    tm=5
+    function occ(l,x){
+        nbr=0
+        for(i=0;i<l.length;i++){
+            if(l[i]==x)
+            nbr++
+        }
+        return nbr
+    }
+    function rand(){
+        for(var i=0;i<12;i++){
+            var x = Math.round(Math.random()*12)
+        while(x==12 ||  occ(notAlpha,alpha[x])>=2)
+        x = Math.round(Math.random()*12)
+        notAlpha[i]=alpha[x];
+        }
+    }
+    function wengame(){
+        wen=false
+        if(character.length<6)
+        {
+                if(yeswen[0]==yeswen[1]){
+                document.getElementById('pp').innerHTML='&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspgood continue'
+                wen=true
+                character.push(yeswen[0])
+                if(character.length==6){
+                document.getElementById('pp').innerHTML='you wen congratulation'
+                setTimeout(function(){location.reload()},2000)
+                }
+                yeswen.pop()
+                    idw.pop()
+                    yeswen.pop()
+                    idw.pop() 
+                   }
+                else
+                {
+                    if(yeswen.length>=2 && wen==false){
+                    document.getElementById(idw[0]).innerHTML='?'
+                    document.getElementById(idw[1]).innerHTML='?'
+                    yeswen.pop()
+                    idw.pop()
+                    yeswen.pop()
+                    idw.pop() 
+                      }
+                }
+               
+            
+        }
+
+    }
+        function insert(id){
+            s=document.getElementById(id);
+            if(yesrand==false)
+            rand()
+            if(game && s.innerHTML=='?'){
+                if(id.length==2)
+                k=parseInt(id.charAt(1))
+                else
+                k=parseInt(id.charAt(1)+id.charAt(2))   
+                s.innerHTML=notAlpha[k]
+                idw.push(id)
+                yeswen.push(notAlpha[k])
+                yesrand=true
+                if(yeswen.length>=2){
+                    wengame()
+                }
+            }
+        }
+</script>
+</html>
