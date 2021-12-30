@@ -90,7 +90,7 @@ setTimeout(settime,1000);
          if(compt==1){
           thankYouMessage.style.display = "inline-block";
           thankYouMessage.scrollIntoView();
-          ch = "Thank U "+document.f.name.value+"!."+" Your submission has been sent"
+          ch = "Thank U "+document.f.name.value+" !."+" Your submission has been sent"
           alert(ch);
          }
           }
